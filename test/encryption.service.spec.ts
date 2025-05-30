@@ -8,7 +8,7 @@ describe('EncryptionService (real keys)', () => {
   });
 
   it('should encrypt and decrypt successfully using real key files', () => {
-    const payload = 'Hello, this is sensitive data!';
+    const payload = 'Hello world';
     const encrypted = service.encryptData(payload);
 
     expect(encrypted.data1).toBeDefined();
@@ -21,6 +21,6 @@ describe('EncryptionService (real keys)', () => {
   it('should throw error when decrypting with invalid encrypted data', () => {
     expect(() => {
       service.decryptData('invalid_base64_string', 'invalid_encrypted_data');
-    }).toThrow(/Decryption failed/);
+    }).toThrow(/Decrypt failed/);
   });
 });

@@ -20,7 +20,7 @@ export class EncryptionService {
 
       const cipher = crypto.createCipheriv('aes-256-cbc', aesKey, iv);
       let encryptedData = cipher.update(payload, 'utf8', 'base64');
-      encryptedData += cipher.final('base64');
+      encryptedData = encryptedData + cipher.final('base64');
 
       const encryptedKey = crypto.privateEncrypt(this.privateKey, Buffer.concat([aesKey, iv]));
 
@@ -29,7 +29,7 @@ export class EncryptionService {
         data2: encryptedData,
       };
     } catch (error) {
-      throw new Error(`Encryption failed: ${error instanceof Error ? error.message : error}`);
+      throw new Error(`Encrypt failed`);
     }
   }
 
@@ -43,11 +43,11 @@ export class EncryptionService {
 
       const decipher = crypto.createDecipheriv('aes-256-cbc', aesKey, iv);
       let decryptedPayload = decipher.update(data2, 'base64', 'utf8');
-      decryptedPayload += decipher.final('utf8');
+      decryptedPayload = decryptedPayload + decipher.final('utf8');
 
       return decryptedPayload;
     } catch (error) {
-      throw new Error(`Decryption failed: ${error instanceof Error ? error.message : error}`);
+      throw new Error(`Decrypt failed`);
     }
   }
 }
