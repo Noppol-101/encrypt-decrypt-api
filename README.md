@@ -64,7 +64,7 @@ You will see a user-friendly UI that lists all available API endpoints with desc
 
 Swagger UI lets you test API routes directly from your browser without needing additional tools.
 
-```
+``
 
 ## Deployment
 
