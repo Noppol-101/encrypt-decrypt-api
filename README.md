@@ -40,8 +40,6 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
 ```
 
 ## Run tests
@@ -50,11 +48,22 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
+```
 
-# test coverage
-$ npm run test:cov
+## Swagger API Documentation
+
+This project integrates Swagger for API documentation and testing.
+
+After starting the NestJS server, you can access the Swagger UI to explore and test the API endpoints.
+
+Open your browser and visit:
+
+http://localhost:3000/api-docs
+
+You will see a user-friendly UI that lists all available API endpoints with descriptions, request schemas, and response examples.
+
+Swagger UI lets you test API routes directly from your browser without needing additional tools.
+
 ```
 
 ## Deployment
